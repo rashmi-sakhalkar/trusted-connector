@@ -1,9 +1,6 @@
-FROM ppc64le/openjdk:8-jdk
+FROM openjdk:8-jdk-slim-stretch
 
 LABEL AUTHOR="Michael Lux (michael.lux@aisec.fraunhofer.de)"
-
-ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-ppc64el
-ENV PATH $PATH:$JAVA_HOME/bin
 
 # Optional: Install oh-my-zsh for a better shell (~ 20 MiB overhead)
 #RUN apt-get update && apt-get install -y wget git zsh fonts-powerline \
