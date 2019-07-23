@@ -1,4 +1,6 @@
 language: java
+os: 
+  - linux-ppc64le
 jdk:
   - oraclejdk8
 services:
