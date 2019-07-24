@@ -59,7 +59,7 @@ task zipExample(type: Zip) {
 zipExample.dependsOn processTemplates
 zipExample.onlyIf { getCommitRefName() != null }
 processResources.dependsOn zipExample
-?*
+/*
 task dockerize(dependsOn: ['dockerizeTpmSim', 'dockerizeClient', 'dockerizeServer'])
 
 task dockerizeTpmSim(type: DockerBuildImage) {
