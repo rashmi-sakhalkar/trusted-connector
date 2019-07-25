@@ -13,15 +13,15 @@ RUN apt-get install -y python-pip
 RUN git clone --branch master https://github.com/rashmi-sakhalkar/trusted-connector/
 
 ENV GRADLE_OPTS: "-Dorg.gradle.daemon=false"
-ENV PROJECT_DIR: "/trusted-connector"
-ENV GRADLE_DIR: "/.gradle"
-ENV M2_DIR: "/.m2"
+#ENV PROJECT_DIR: "/trusted-connector"
+#ENV GRADLE_DIR: "/.gradle"
+#ENV M2_DIR: "/.m2"
 
 RUN npm install -g yarn -y
 RUN cd /trusted-connector && \
 ./gradlew clean build --parallel
 
-CMD ["/bin/bash"]
+CMD ["./karaf-assembly/build/assembly/bin/karaf clean debug"]
 #/root/bin/client
 
 #ENTRYPOINT ["/run.sh"]
