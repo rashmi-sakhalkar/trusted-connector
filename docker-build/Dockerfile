@@ -2,7 +2,7 @@ FROM node:11-slim
 
 #https://github.com/puckel/docker-airflow/issues/182#issuecomment-444683455
 RUN mkdir -p /usr/share/man/man1
-RUN apt-get update -qq && apt-get install -qq bash sudo openjdk-8-jdk
+RUN apt-get update -qq && apt-get install -qq bash sudo openjdk-8-jdk -y
 RUN apt-get install git -y
 
 COPY run.sh .
@@ -15,6 +15,7 @@ ENV PROJECT_DIR: "/trusted-connector"
 ENV GRADLE_DIR: "/.gradle"
 ENV M2_DIR: "/.m2"
 
+RUN npm install -g yarn -y
 RUN cd /trusted-connector && \
 ./gradlew clean build
 
