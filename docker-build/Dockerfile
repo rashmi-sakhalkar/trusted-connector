@@ -2,7 +2,8 @@ FROM node:11-slim
 
 #https://github.com/puckel/docker-airflow/issues/182#issuecomment-444683455
 RUN mkdir -p /usr/share/man/man1
-RUN apt-get update -qq && apt-get install -qq bash sudo git openjdk-8-jdk
+RUN apt-get update -qq && apt-get install -qq bash sudo openjdk-8-jdk
+RUN apt-get install git -y
 
 COPY run.sh .
 RUN chmod +x run.sh
@@ -14,5 +15,11 @@ ENV PROJECT_DIR: "/trusted-connector"
 ENV GRADLE_DIR: "/.gradle"
 ENV M2_DIR: "/.m2"
 
-ENTRYPOINT ["/run.sh"]
-CMD ["build", "check", "dockerize", "--parallel", "-PdockerTag=develop"]
+RUN cd /trusted-connector && \
+./gradlew clean build
+
+CMD ["/bin/bash"]
+#/root/bin/client
+
+#ENTRYPOINT ["/run.sh"]
+#CMD ["build", "check", "dockerize", "--parallel", "-PdockerTag=develop"]
