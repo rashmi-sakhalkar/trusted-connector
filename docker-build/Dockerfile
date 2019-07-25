@@ -4,6 +4,8 @@ FROM node:11-slim
 RUN mkdir -p /usr/share/man/man1
 RUN apt-get update && apt-get install bash sudo openjdk-8-jdk -y
 RUN apt-get install git -y
+RUN apt-get install -y python-dev
+RUN apt-get install -y python-pip
 
 #COPY run.sh .
 #RUN chmod +x run.sh
@@ -17,7 +19,7 @@ ENV M2_DIR: "/.m2"
 
 RUN npm install -g yarn -y
 RUN cd /trusted-connector && \
-./gradlew clean build
+./gradlew clean build --parallel
 
 CMD ["/bin/bash"]
 #/root/bin/client
