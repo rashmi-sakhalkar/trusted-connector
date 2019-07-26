@@ -12,7 +12,7 @@ RUN git clone --branch master https://github.com/rashmi-sakhalkar/trusted-connec
 
 ENV GRADLE_OPTS: "-Dorg.gradle.daemon=false"
 
-RUN npm install -g yarn -y
+#RUN npm install -g yarn -y
 RUN cd /trusted-connector && \
 ./gradlew clean build --parallel
 
