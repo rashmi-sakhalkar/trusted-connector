@@ -9,5 +9,7 @@ RUN apt-get update && apt-get install bash sudo openjdk-8-jdk -y && \
             git clone --branch master https://github.com/rashmi-sakhalkar/trusted-connector/ && \
             cd /trusted-connector && \
             ./gradlew clean build --parallel
-            
-CMD ["./runConnector.sh"]
+
+WORKDIR /trusted-connector       
+
+CMD ["./karaf-assembly/build/assembly/bin/karaf","clean","debug"]
