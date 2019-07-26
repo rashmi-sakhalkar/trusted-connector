@@ -11,7 +11,3 @@ RUN apt-get update && apt-get install bash sudo openjdk-8-jdk -y && \
             ./gradlew clean build --parallel
             
 CMD ["./runConnector.sh"]
-#/root/bin/client
-
-#ENTRYPOINT ["/run.sh"]
-#CMD ["build", "check", "dockerize", "--parallel", "-PdockerTag=develop"]
