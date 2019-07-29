@@ -14,4 +14,4 @@ cache:
   - $HOME/.gradle/caches/
   - $HOME/.gradle/wrapper/
 install: true
-script: docker build --tag rashmi/trusted-connector-core ./docker-build/
+script: docker build --tag rashmi/trusted-connector-tpsim ./examples/tpmsim/
