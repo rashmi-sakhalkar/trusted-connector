@@ -5,8 +5,7 @@ RUN mkdir -p /usr/share/man/man1
 RUN apt-get update && apt-get install bash sudo openjdk-8-jdk -y 
 RUN apt-get install git -y
 
-RUN apt-get install -y python-dev
-RUN apt-get install -y python-pip
+RUN apt-get install -y python-dev python-pip
 
 RUN git clone --branch master https://github.com/rashmi-sakhalkar/trusted-connector/
 
