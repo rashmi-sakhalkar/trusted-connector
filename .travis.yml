@@ -14,4 +14,6 @@ cache:
   - $HOME/.gradle/caches/
   - $HOME/.gradle/wrapper/
 install: true
-script: docker build --tag rashmi/trusted-connector ./docker-build/
+script: 
+  - docker build --tag rashmi/trusted-connector ./docker-build/
+  - ./gradlew --parallel clean build dockerize
