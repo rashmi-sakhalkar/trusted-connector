@@ -2,6 +2,6 @@ dependencies {
     implementation group: 'com.github.jnr', name: 'jnr-unixsocket', version: libraryVersions.jnrunix
     // Only jnr-ffi is provided by bundle, because it contains native libraries
     // Versions above 2.1.5 fail with a wiring exception for package com.github.jnr.jffi.native
-    unixSocketBundle group: 'com.github.jnr', name: 'jnr-ffi', version: '1.2.18'
-    //unixSocketBundle group: 'com.github.jnr', name: 'ffi', version: '1.2.19-native'
+    //unixSocketBundle group: 'com.github.jnr', name: 'jnr-ffi', version: '2.1.5'
+    unixSocketBundle group: 'com.github.jnr', name: 'ffi', version: '1.2.5'
 }
