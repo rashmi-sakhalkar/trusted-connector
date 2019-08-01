@@ -5,7 +5,7 @@ RUN mkdir ${BUILD_DIR}
 
 RUN apt-get update -qq && apt-get install -qq git checkinstall \
   # libtpms dependencies
-  automake autoconf libtool make gcc libc-dev libssl-dev
+  automake autoconf libtool make gcc libc-dev openssl libssl-dev
 RUN git clone https://github.com/stefanberger/libtpms.git
 RUN cd libtpms && ./autogen.sh --prefix=/usr/local --with-openssl --with-tpm2 && make -j4 && \
   # Install libtpms to BUILD_DIR and the real user directory (for swtpm build)
