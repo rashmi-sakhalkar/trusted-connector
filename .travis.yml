@@ -12,4 +12,4 @@ cache:
   - $HOME/.gradle/caches/
   - $HOME/.gradle/wrapper/
 install: true
-script: docker build --tag rashmi/trusted-connector ./karaf-assembly/
+script: script: ./gradlew --parallel clean build dockerize
