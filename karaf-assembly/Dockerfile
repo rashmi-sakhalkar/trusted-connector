@@ -1,4 +1,5 @@
-FROM ppc64le/openjdk:8-jdk
+#FROM ppc64le/openjdk:8-jdk
+FROM openjdk:8-jdk-slim-stretch
 
 LABEL AUTHOR="Michael Lux (michael.lux@aisec.fraunhofer.de)"
 
