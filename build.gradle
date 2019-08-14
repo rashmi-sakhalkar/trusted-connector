@@ -48,7 +48,7 @@ def getDockerTag() {
 allprojects {
     group = 'de.fhg.aisec.ids'
     version = '2.0.0'
-
+    System.out.println(System.getProperty("os.arch"));
     ext.libraryVersions = [
             // basically, the first requirement, all other libraries depend on this version
             karaf              : '4.2.2',
