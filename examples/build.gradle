@@ -59,7 +59,7 @@ task zipExample(type: Zip) {
 zipExample.dependsOn processTemplates
 zipExample.onlyIf { getCommitRefName() != null }
 processResources.dependsOn zipExample
-
+/*
 task dockerize(dependsOn: ['dockerizeTpmSim', 'dockerizeClient', 'dockerizeServer'])
 
 task dockerizeTpmSim(type: DockerBuildImage) {
@@ -76,7 +76,7 @@ task dockerizeServer(type: DockerBuildImage) {
     inputDir = new File(project.projectDir.getPath() + '/example-idscp/example-server')
     tag = "fraunhoferaisec/example-server:${rootProject.getDockerTag()}"
 }
-
+*/
 // Delete the redundant build directory after install or build, if executed
 gradle.taskGraph.whenReady {
     Task task = (Task) [install, build].find({ gradle.taskGraph.hasTask((Task) it) })
