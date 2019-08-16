@@ -14,4 +14,4 @@ cache:
   - $HOME/.gradle/caches/
   - $HOME/.gradle/wrapper/
 install: true
-script: ./gradlew --parallel clean build dockerize
+script: ./gradlew --parallel clean build
