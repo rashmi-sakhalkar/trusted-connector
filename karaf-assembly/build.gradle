@@ -33,7 +33,7 @@ rootProject.subprojects.findAll() {
         assembleKaraf.dependsOn(it.tasks.install)
     }
 }
-
+/*
 task dockerize(type: DockerBuildImage) {
     inputDir = project.projectDir
     tag = "rashmi/trusted-connector"
@@ -41,7 +41,7 @@ task dockerize(type: DockerBuildImage) {
 }
 
 dockerize.dependsOn(assembleKaraf)
-
+*/
 dependencies {
     testImplementation project(':ids-api')
     osgiCore group: 'org.apache.felix', name: 'org.apache.felix.framework', version: libraryVersions.felixFramework
