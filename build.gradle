@@ -48,6 +48,10 @@ def getDockerTag() {
 allprojects {
     group = 'de.fhg.aisec.ids'
     version = '2.0.0'
+    if(System.getProperty("os.arch").equals("ppc64le")) {
+        protobuf_version = '3.8.0';
+        System.out.println("**In if block**");
+    }
     System.out.println(System.getProperty("os.arch"));
     ext.libraryVersions = [
             // basically, the first requirement, all other libraries depend on this version
@@ -83,7 +87,7 @@ allprojects {
             mapdb              : '3.0.7',
             // must be consistent with jnr-ffi version in jnr-unixsocket-wrapper
             jnrunix            : '0.23',
-            protobuf           : '3.8.0',
+            protobuf           : protobuf_version,
             httpcore           : '4.4.11',
             httpclient         : '4.5.7',
 
