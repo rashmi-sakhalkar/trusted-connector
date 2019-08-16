@@ -50,7 +50,7 @@ allprojects {
     version = '2.0.0'
     String protobuf_version = '3.6.1';
     if(System.getProperty("os.arch").equals("ppc64le")) {
-        protobuf_version = '3.6.1';
+        protobuf_version = '3.8.0';
         System.out.println("**In if block**");
     }
     System.out.println(System.getProperty("os.arch"));
